@@ -512,10 +512,19 @@ class _TooltipOverlay extends StatelessWidget {
                   child: Center(
                     widthFactor: 1.0,
                     heightFactor: 1.0,
-                    child: Text(
-                      message,
-                      style: textStyle,
-                    ),
+                    child: RichText(
+                     text: TextSpan(
+                       text: '',
+                       style: DefaultTextStyle.of(context).style,
+                       children: <TextSpan>[
+                         TextSpan(
+                             text: tipTitle,
+                             style: TextStyle(fontWeight: FontWeight.bold)),
+                         TextSpan(
+                             text:message)
+                       ],
+                     ),
+                   ),
                   ),
                 ),
               ),
